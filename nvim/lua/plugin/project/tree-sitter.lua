@@ -1,9 +1,10 @@
 -- 代码高亮
 return {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = "HiPhish/nvim-ts-rainbow2",
     config = function()
         require("nvim-treesitter.configs").setup {
-            ensure_installed = { 
+            ensure_installed = {
                 "c",
                 "lua",
                 "rust",
@@ -12,8 +13,15 @@ return {
                 "glsl",
                 "markdown",
                 "markdown_inline",
+                "toml"
             },
             auto_install = true,
+            rainbow = {
+                enable = true,
+                disable = {},
+                query = 'rainbow-parens',
+                strategy = require('ts-rainbow').strategy.global,
+            },
         }
     end,
 }

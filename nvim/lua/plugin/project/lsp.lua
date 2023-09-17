@@ -4,9 +4,9 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "nvim-treesitter/nvim-treesitter",
-        "simrat39/rust-tools.nvim",
+        "hrsh7th/nvim-cmp",
     },
-    event = "BufReadPre",
+    ft = {"rust","lua","c","json","toml"};
     keys = {
         { "<leader>ld", vim.lsp.buf.definition, desc = "跳转到定义" },
         { "<leader>lf", vim.lsp.buf.format, desc = "代码格式化" },
@@ -23,12 +23,25 @@ return {
         }
 
         local lsp = require("lspconfig")
-        lsp.lua_ls.setup {}
-        lsp.rust_analyzer.setup {}
-        lsp.clangd.setup {}
-        lsp.cmake.setup {}
-        lsp.glslls.setup {}
-        lsp.jsonls.setup {}
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        lsp.lua_ls.setup {
+            capabilities = capabilities,
+        }
+        lsp.rust_analyzer.setup {
+            capabilities = capabilities,
+        }
+        lsp.clangd.setup {
+            capabilities = capabilities,
+        }
+        lsp.cmake.setup {
+            capabilities = capabilities,
+        }
+        lsp.glslls.setup {
+            capabilities = capabilities,
+        }
+        lsp.jsonls.setup {
+            capabilities = capabilities,
+        }
 
         -- lsp ui 样式
         local border = "single"
