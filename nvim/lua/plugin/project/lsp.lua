@@ -6,7 +6,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         "hrsh7th/nvim-cmp",
     },
-    ft = {"rust","lua","c","json","toml"};
+    ft = { "rust", "lua", "c", "json", "toml" },
     keys = {
         { "<leader>ld", vim.lsp.buf.definition, desc = "跳转到定义" },
         { "<leader>lf", vim.lsp.buf.format, desc = "代码格式化" },
@@ -42,6 +42,14 @@ return {
         lsp.jsonls.setup {
             capabilities = capabilities,
         }
+
+        -- 保存时代码自动格式化
+        vim.cmd [[
+            augroup code_save_auto_format
+                autocmd!
+                autocmd BufWritePre * :lua vim.lsp.buf.format()
+            augroup end
+        ]]
 
         -- lsp ui 样式
         local border = "single"
