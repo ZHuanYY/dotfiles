@@ -5,6 +5,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         "nvim-treesitter/nvim-treesitter",
         "hrsh7th/nvim-cmp",
+        "lukas-reineke/indent-blankline.nvim"
     },
     ft = { "rust", "lua", "c", "json", "toml" },
     keys = {
