@@ -16,6 +16,9 @@ opt.autoindent = true
 -- 自动折行
 opt.wrap = false
 
+-- 自动折叠
+opt.foldlevel = 100
+
 -- 光标行提示
 opt.cursorline = true
 
@@ -43,7 +46,7 @@ theme = "tokyonight-storm"
 --   moon
 --   night
 --   storm(default)
--- catppuccin 
+-- catppuccin
 --   latte
 --   frappe
 --   macchiato

@@ -23,5 +23,7 @@ return {
                 strategy = require('ts-rainbow').strategy.global,
             },
         }
+        vim.opt.foldmethod = 'expr'
+        vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
     end,
 }
