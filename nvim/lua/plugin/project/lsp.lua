@@ -10,6 +10,12 @@ return {
     keys = {
         { "<leader>ld", vim.lsp.buf.definition, desc = "跳转到定义" },
         { "<leader>lf", vim.lsp.buf.format, desc = "代码格式化" },
+        { "<leader>lc", vim.lsp.buf.code_action, desc = "代码操作" },
+        { "<leader>lh", vim.lsp.buf.hover, desc = "悬停窗口" },
+        { "<leader>lr", vim.lsp.buf.rename, desc = "变量重命名" },
+        { "<leader>dk", vim.diagnostic.goto_prev, desc = "跳转到上个诊断" },
+        { "<leader>dj", vim.diagnostic.goto_next, desc = "跳转到下个诊断" },
+        { "<leader>dh", vim.diagnostic.open_float, desc = "诊断悬停窗口" },
     },
     config = function()
         require("mason").setup {}
