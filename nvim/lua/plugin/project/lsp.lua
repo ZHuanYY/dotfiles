@@ -1,11 +1,12 @@
 return {
     "neovim/nvim-lspconfig",
+    enabled = false,
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "nvim-treesitter/nvim-treesitter",
         "hrsh7th/nvim-cmp",
-        "lukas-reineke/indent-blankline.nvim",
+        { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     },
     ft = { "rust", "lua", "c", "json", "toml", "cmake" },
     keys = {
