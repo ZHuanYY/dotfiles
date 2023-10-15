@@ -5,9 +5,9 @@ return {
         "williamboman/mason-lspconfig.nvim",
         "nvim-treesitter/nvim-treesitter",
         "hrsh7th/nvim-cmp",
-        "lukas-reineke/indent-blankline.nvim"
+        "lukas-reineke/indent-blankline.nvim",
     },
-    ft = { "rust", "lua", "c", "json", "toml" },
+    ft = { "rust", "lua", "c", "json", "toml", "cmake" },
     keys = {
         { "<leader>ld", vim.lsp.buf.definition, desc = "跳转到定义" },
         { "<leader>lf", vim.lsp.buf.format, desc = "代码格式化" },
@@ -25,7 +25,7 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "clangd",
-                "cmake",
+                "neocmake",
             }
         }
 
@@ -37,10 +37,8 @@ return {
         lsp.rust_analyzer.setup {
             capabilities = capabilities,
         }
-        lsp.clangd.setup {
-            capabilities = capabilities,
-        }
-        lsp.cmake.setup {
+
+        lsp.neocmake.setup {
             capabilities = capabilities,
         }
         lsp.glslls.setup {
@@ -49,14 +47,17 @@ return {
         lsp.jsonls.setup {
             capabilities = capabilities,
         }
+        lsp.clangd.setup {
+            capabilities = capabilities,
+        }
+
 
         -- 保存时代码自动格式化
         vim.cmd [[
-            augroup code_save_auto_format
-                autocmd!
-                autocmd BufWritePre * :lua vim.lsp.buf.format()
-            augroup end
-        ]]
+                     augroup code_save_auto_format
+             autocmd!
+        autocmd BufWritePre * :lua vim.lsp.buf.format()
+         augroup end ]]
 
         -- lsp ui 样式
         local border = "single"
