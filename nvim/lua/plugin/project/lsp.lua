@@ -27,6 +27,8 @@ return {
                 "rust_analyzer",
                 "clangd",
                 "neocmake",
+                "jsonls",
+                "glslls"
             }
         }
 
