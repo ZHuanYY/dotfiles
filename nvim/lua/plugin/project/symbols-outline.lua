@@ -1,7 +1,7 @@
 -- 符号大纲
 return {
     "simrat39/symbols-outline.nvim",
-    enabled = false,
+    enabled = true,
     keys = {
         { "<leader>so", "<cmd>SymbolsOutline<cr>", desc = "代码大纲" }
     },

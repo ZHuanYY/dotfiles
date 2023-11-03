@@ -39,7 +39,7 @@ opt.clipboard:append("unnamedplus")
 -- 外观
 opt.termguicolors = true
 opt.signcolumn = "yes"
-theme = "tokyonight-storm"
+theme = "catppuccin-macchiato"
 -- 可选主题
 -- tokyonight
 --   day

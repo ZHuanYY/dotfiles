@@ -12,6 +12,10 @@ end
 return {
     "neoclide/coc.nvim",
     branch = "release",
+    -- dependencies = {
+    --     "nvim-treesitter/nvim-treesitter"
+    -- },
+    enabled = false;
     ft = { "rust", "lua", "c", "json", "toml", "cmake" },
     keys = {
         { "<tab>", "coc#pum#visible() ? coc#pum#next(1) : '<TAB>'", mode = "i", expr = true },
@@ -20,7 +24,7 @@ return {
         { "<c-space>", "coc#refresh()", mode = "i", expr = true },
         { "<leader>ld", "<Plug>(coc-definition)", desc = "跳转到定义" },
         { "<leader>lf", "<Plug>(coc-format)", desc = "代码格式化" },
-        { "<leader>lc", "<Plug>(coc-codeaction)", desc = "代码操作" },
+        { "<leader>lc", "<Plug>(coc-codeaction-cursor)", desc = "代码操作" },
         { "<leader>lh", show_docs, desc = "悬停窗口" },
         { "<leader>lr", "<Plug>(coc-rename)", desc = "变量重命名" },
         { "<leader>dk", "<Plug>(coc-diagnostic-prev)", desc = "跳转到上个诊断" },
