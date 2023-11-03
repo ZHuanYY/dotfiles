@@ -28,7 +28,6 @@ return {
                 "clangd",
                 "neocmake",
                 "jsonls",
-                "glslls"
             }
         }
 
