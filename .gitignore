@@ -4,3 +4,5 @@ fish/fish_variables
 emacs/elisp/custom.el
 emacs/elpa
 emacs/projectile-bookmarks.eld
+emacs/auto-save-list
+emacs/snippets

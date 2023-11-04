@@ -7,11 +7,13 @@ return {
         "nvim-treesitter/nvim-treesitter",
         "hrsh7th/nvim-cmp",
         { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+        "sbdchd/neoformat",
     },
     ft = { "rust", "lua", "c", "json", "toml", "cmake" },
     keys = {
         { "<leader>ld", vim.lsp.buf.definition, desc = "跳转到定义" },
-        { "<leader>lf", vim.lsp.buf.format, desc = "代码格式化" },
+        { "<leader>lf", "<cmd>Neoformat<cr>", desc = "代码格式化" },
+        -- { "<leader>lf", vim.lsp.buf.format, desc = "代码格式化" },
         { "<leader>lc", vim.lsp.buf.code_action, desc = "代码操作" },
         { "<leader>lh", vim.lsp.buf.hover, desc = "悬停窗口" },
         { "<leader>lr", vim.lsp.buf.rename, desc = "变量重命名" },
@@ -30,6 +32,13 @@ return {
                 "jsonls",
             }
         }
+
+        -- 格式化样式
+        vim.g.neoformat_c_clangformat = {
+            exe = "clang-format",
+            args = { [[--style="{BasedOnStyle: llvm, IndentWidth: 4}"]] }
+        }
+        vim.g.neoformat_enabled_c = { "clangformat" }
 
         local lsp = require("lspconfig")
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -55,11 +64,11 @@ return {
 
 
         -- 保存时代码自动格式化
-        vim.cmd [[
-                     augroup code_save_auto_format
-             autocmd!
-        autocmd BufWritePre * :lua vim.lsp.buf.format()
-         augroup end ]]
+        -- vim.cmd [[
+        --     augroup code_save_auto_format
+        --     autocmd!
+        --     autocmd BufWritePre * :lua vim.lsp.buf.format()
+        --     augroup end ]]
 
         -- lsp ui 样式
         local border = "single"
