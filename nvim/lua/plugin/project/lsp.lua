@@ -22,6 +22,8 @@ return {
         { "<leader>dh", vim.diagnostic.open_float, desc = "诊断悬停窗口" },
     },
     config = function()
+        vim.g.c_syntax_for_h=1
+
         require("mason").setup {}
         require("mason-lspconfig").setup {
             ensure_installed = {
