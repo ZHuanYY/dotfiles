@@ -1,6 +1,6 @@
 local opt = vim.opt
 -- 字体
-opt.guifont = "Hack:h20"
+opt.guifont = "Hack:h15"
 
 -- 行号
 opt.number = true
@@ -53,4 +53,5 @@ theme = "catppuccin-macchiato"
 --   mocha(default)
 
 -- 编码格式
+opt.encoding="utf-8"
 opt.fileencoding = "utf-8"

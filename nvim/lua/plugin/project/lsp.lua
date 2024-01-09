@@ -9,7 +9,7 @@ return {
         { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
         "sbdchd/neoformat",
     },
-    ft = { "rust", "lua", "c", "json", "toml", "cmake" },
+    ft = { "rust", "lua", "c", "json", "toml", "cmake","xml" },
     keys = {
         { "<leader>ld", vim.lsp.buf.definition, desc = "跳转到定义" },
         { "<leader>lf", "<cmd>Neoformat<cr>", desc = "代码格式化" },
@@ -32,6 +32,7 @@ return {
                 "clangd",
                 "neocmake",
                 "jsonls",
+                "lemminx",
             }
         }
 
@@ -63,6 +64,10 @@ return {
         lsp.clangd.setup {
             capabilities = capabilities,
         }
+        lsp.lemminx.setup{
+            capabilities = capabilities,
+        }
+
 
 
         -- 保存时代码自动格式化

@@ -16,7 +16,7 @@ return {
     --     "nvim-treesitter/nvim-treesitter"
     -- },
     enabled = false;
-    ft = { "rust", "lua", "c", "json", "toml", "cmake" },
+    ft = { "rust", "lua", "c", "json", "toml", "cmake","xml" },
     keys = {
         { "<tab>", "coc#pum#visible() ? coc#pum#next(1) : '<TAB>'", mode = "i", expr = true },
         { "<S-TAB>", "coc#pum#visible() ? coc#pum#prev(1) : '<S-TAB>'", mode = "i", expr = true },
@@ -37,7 +37,9 @@ return {
             "coc-lua",
             "coc-json",
             "coc-rust-analyzer",
-            "coc-clangd"
+            "coc-clangd",
+            "coc-xml",
+            "coc-highlight"
         }
     end,
 }

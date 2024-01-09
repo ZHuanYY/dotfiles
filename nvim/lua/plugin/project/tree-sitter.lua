@@ -13,7 +13,8 @@ return {
                 "glsl",
                 "markdown",
                 "markdown_inline",
-                "toml"
+                "toml",
+                "xml"
             },
             auto_install = true,
             rainbow = {
