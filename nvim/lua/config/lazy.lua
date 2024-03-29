@@ -16,7 +16,9 @@ require("lazy").setup({
         { import = "theme" },
         { import = "plugin" },
         { import = "plugin.ui" },
-        { import = "plugin.project" },
+        { import = "plugin.code"},
+        { import = "plugin.code.rust"},
+        { import = "plugin.telescope" },
     },
 
     defaults = {
