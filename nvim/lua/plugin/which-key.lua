@@ -6,5 +6,13 @@ return {
         vim.o.timeout = true
         vim.o.timeoutlen = 500
     end,
-    opts = {}
+    config = function()
+        local wk = require("which-key")
+        wk.setup()
+        wk.register{
+            ["<leader>nh"] = "取消高亮",
+            ["<c-j>"] = "下方插入一行",
+            ["<c-k>"] = "上方插入一行",
+        }
+    end
 }

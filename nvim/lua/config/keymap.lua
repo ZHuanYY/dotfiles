@@ -8,6 +8,8 @@ local keymap = vim.keymap
 -- ---------- 正常模式 ---------- --
 
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- 取消高亮
+keymap.set("n","<c-j>","o<esc>k") -- 下方插入一行
+keymap.set("n","<c-k>","o<esc>j") -- 上方插入一行
 
 -- ---------- 插入模式 ---------- --
 
