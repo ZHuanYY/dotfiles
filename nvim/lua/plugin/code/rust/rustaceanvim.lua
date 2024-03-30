@@ -2,7 +2,8 @@ return{
     "mrcjkb/rustaceanvim",
     -- version = "^4",
     dependencies = {
-        "sbdchd/neoformat",
+        "pocco81/auto-save.nvim", -- 自动保存
+        "sbdchd/neoformat", -- 代码格式化
         "folke/which-key.nvim",
         "ahmedkhalf/project.nvim",
         {"lvimuser/lsp-inlayhints.nvim",opts = {}} -- neovim 0.10版本时可以删掉此行
@@ -24,6 +25,9 @@ return{
         keymap.set("n","<leader>lr" ,vim.lsp.buf.rename ) -- 变量重命名
         keymap.set("n","<leader>dk" ,vim.diagnostic.goto_prev ) -- 跳转到上个诊断
         keymap.set("n","<leader>dj" ,vim.diagnostic.goto_next ) -- 跳转到下个诊断
+        keymap.set("n","<leader>lc","<cmd>RustLsp codeAction<cr>") -- 代码操作
+        keymap.set("n","<leader>lj","<cmd>RustLsp moveItem down<cr>") -- 整体向下移动
+        keymap.set("n","<leader>lk","<cmd>RustLsp moveItem up<cr>") -- 整体向上移动
             
         wk.register{
             ["<leader>lh"] = "悬停窗口",
@@ -37,6 +41,9 @@ return{
             ["<leader>lr"] = "变量重命名",
             ["<leader>dk"] = "跳转到上个诊断",
             ["<leader>dj"] = "跳转到下个诊断",
+            ["<leader>lc"] = "代码操作",
+            ["<leader>lj"] = "整体向下移动",
+            ["<leader>lk"] = "整体向上移动",
         }
 
         vim.g.rustaceanvim = {
