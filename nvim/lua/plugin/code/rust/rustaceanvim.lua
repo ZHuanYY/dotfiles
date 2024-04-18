@@ -18,10 +18,10 @@ return{
         keymap.set("n","<leader>lp" ,"<cmd>RustLsp parentModule<cr>" ) -- 打开父模块
         keymap.set("n","<leader>ll" ,"<cmd>RustLsp joinLines<cr>" ) -- 优化为一行
         keymap.set("n","<leader>ld" ,vim.lsp.buf.definition ) -- 跳转到定义
-        keymap.set("n","<leader>lf" ,"<cmd>Neoformat<cr>" ) -- 代码格式化
         keymap.set("n","<leader>lr" ,vim.lsp.buf.rename ) -- 变量重命名
         keymap.set("n","<leader>dk" ,vim.diagnostic.goto_prev ) -- 跳转到上个诊断
         keymap.set("n","<leader>dj" ,vim.diagnostic.goto_next ) -- 跳转到下个诊断
+        keymap.set("n", "<leader>lf", "<cmd>Neoformat<cr>") -- 代码格式化
         keymap.set("n","<leader>lc","<cmd>RustLsp codeAction<cr>") -- 代码操作
         keymap.set("n","<leader>lj","<cmd>RustLsp moveItem down<cr>") -- 整体向下移动
         keymap.set("n","<leader>lk","<cmd>RustLsp moveItem up<cr>") -- 整体向上移动
@@ -34,10 +34,10 @@ return{
             ["<leader>lp"] = "打开父模块",
             ["<leader>ll"] = "优化为一行",
             ["<leader>ld"] = "跳转到定义",
-            ["<leader>lf"] = "代码格式化",
             ["<leader>lr"] = "变量重命名",
             ["<leader>dk"] = "跳转到上个诊断",
             ["<leader>dj"] = "跳转到下个诊断",
+            ["<leader>lf"] = "代码格式化",
             ["<leader>lc"] = "代码操作",
             ["<leader>lj"] = "整体向下移动",
             ["<leader>lk"] = "整体向上移动",
