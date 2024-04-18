@@ -11,7 +11,8 @@ return{
         local wk = require("which-key")
         
         keymap.set("n","<leader>lh" ,"<cmd>RustLsp hover actions<cr>" ) -- 悬停窗口
-        keymap.set("n","<leader>dh" ,"<cmd>RustLsp explainError<cr>" ) -- 诊断悬停窗口
+        -- keymap.set("n","<leader>dh" ,"<cmd>RustLsp explainError<cr>" ) -- 诊断悬停窗口
+        keymap.set("n","<leader>dh" , vim.diagnostic.open_float) -- 诊断悬停窗口
         keymap.set("n","<leader>oc" ,"<cmd>RustLsp openCargo<cr>" ) -- 打开Cargo.toml
         keymap.set("n","<leader>od" ,"<cmd>RustLsp openDocs<cr>" ) -- 打开当前符号的Docs
         keymap.set("n","<leader>lp" ,"<cmd>RustLsp parentModule<cr>" ) -- 打开父模块

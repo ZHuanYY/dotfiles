@@ -14,9 +14,11 @@ return {
         local wk = require("which-key")
 
         keymap.set("n",";","A;<esc>") -- 末尾添加分号
+        keymap.set("n",",","A,<esc>") -- 末尾添加逗号
 
         wk.register{
-            [";"] = "末尾添加分号"
+            [";"] = "末尾添加分号",
+            [","] = "末尾添加逗号"
         }
 
 
