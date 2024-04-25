@@ -1,6 +1,6 @@
 local opt = vim.opt
 -- 字体
-opt.guifont = "Hack:h20"
+opt.guifont = "Hack Nerd Font Mono:h20"
 
 -- 行号
 opt.number = true
