@@ -1,3 +1,5 @@
+vim.g.mapleader = " " -- 设置主键     ■ Undefined global `vim`.
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -19,6 +21,7 @@ require("lazy").setup({
         { import = "plugin.code"},
         { import = "plugin.code.rust"},
         { import = "plugin.code.lua"},
+        { import = "plugin.code.go"},
         { import = "plugin.telescope" },
     },
 

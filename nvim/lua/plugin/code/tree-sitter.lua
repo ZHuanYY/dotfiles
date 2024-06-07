@@ -1,31 +1,30 @@
 -- 代码高亮
 return {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = "HiPhish/nvim-ts-rainbow2",
+    build = ":TSUpdate",
     config = function()
-        require("nvim-treesitter.configs").setup {
+        local configs = require("nvim-treesitter.configs")
+        configs.setup({
             ensure_installed = {
                 "c",
                 "lua",
+                "vim",
+                "vimdoc",
+                -- "query",
+                -- "elixir",
+                -- "heex",
+                "javascript",
+                "html",
                 "rust",
                 "json",
-                "cmake",
                 "glsl",
                 "markdown",
-                "markdown_inline",
                 "toml",
                 "xml",
-                "slint"
             },
-            auto_install = true,
-            rainbow = {
-                enable = true,
-                disable = {},
-                query = 'rainbow-parens',
-                strategy = require('ts-rainbow').strategy.global,
-            },
-        }
-        vim.opt.foldmethod = 'expr'
-        vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+            sync_install = false,
+            highlight = { enable = true },
+            indent = { enable = true },
+        })
     end,
 }

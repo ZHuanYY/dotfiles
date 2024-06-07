@@ -7,7 +7,6 @@ return {
         vim.o.timeoutlen = 500
     end,
     config = function()
-        vim.g.mapleader = " " -- 设置主键     ■ Undefined global `vim`.
         local keymap = vim.keymap
 
         keymap.set("n", "<leader>nh", ":nohl<CR>") -- 取消高亮

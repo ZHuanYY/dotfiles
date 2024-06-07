@@ -5,7 +5,8 @@ return {
         "pocco81/auto-save.nvim",                  -- 自动保存
         "sbdchd/neoformat",                        -- 代码格式化
         "folke/which-key.nvim",
-        { "lvimuser/lsp-inlayhints.nvim", opts = {} } -- neovim 0.10版本时可以删掉此行
+        { "lvimuser/lsp-inlayhints.nvim", opts = {} }, -- neovim 0.10版本时可以删掉此行
+        "nvim-treesitter/nvim-treesitter"
     },
 
     -- event = "VeryLazy",
