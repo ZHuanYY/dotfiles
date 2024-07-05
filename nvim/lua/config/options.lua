@@ -14,7 +14,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- 自动折行
-opt.wrap = false
+opt.wrap = true
 
 -- 自动折叠
 opt.foldlevel = 100
